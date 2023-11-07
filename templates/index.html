@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>CAPTCHA RECOGNITION</title>
+</head>
+<body>
+    <div class="container">
+        <h1>CAPTCHA RECOGNITION</h1>
+            <h2>image upload</h2>
+        <form method="POST" action="/" enctype="multipart/form-data">
+            <input type="file" name="file">
+            <input type="submit" value="Upload">
+        </form>
+        {% if filename %}
+            <div>
+                <img src="{{ filename }}" alt="Uploaded Image">
+            </div>
+            <div>
+                <p>예측 결과: {{ cleaned_result }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
